@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-
+from home.models import contact
 # Create your views here from here you display the http respons tto the site.
 def home (request):
     #return HttpResponse("THIS IS MY HOMEPAGE(/)")
@@ -18,6 +18,9 @@ def contact (request):
        subject = request.POST['subject']
        inputcity = request.POST['inputcity']
        state=request.POST['state']
-       print(firstname, lastname, subject, inputcity,state )
+       #print(firstname, lastname, subject, inputcity,state )
+       ins=contact(firstname= firstname,lastname=lastname,subject=subject,inputcity=inputcity,state=state)
+       ins.save()
+       print("the data has been written to the database")
    # return HttpResponse("THIS IS MY contact PAGE(/)")
    return render(request, 'contact.html')
