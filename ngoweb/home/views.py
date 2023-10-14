@@ -12,5 +12,12 @@ def ngos (request):
    # return HttpResponse("THIS IS MY ngos PAGE(/)")
     return render(request, 'ngos.html')
 def contact (request):
+   if request.method=="POST":
+       firstname = request.POST['firstname']
+       lastname = request.POST['lastname']
+       subject = request.POST['subject']
+       inputcity = request.POST['inputcity']
+       state=request.POST['state']
+       print(firstname, lastname, subject, inputcity,state )
    # return HttpResponse("THIS IS MY contact PAGE(/)")
-    return render(request, 'contact.html')
+   return render(request, 'contact.html')
