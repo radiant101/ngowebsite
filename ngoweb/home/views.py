@@ -8,19 +8,22 @@ def home (request):
 def about (request):
     #return HttpResponse("THIS IS MY  about PAGE(/about)")
      return render(request, 'about.html')
+def report (request):
+     return render(request, 'report.html')
+
 def ngos (request):
    # return HttpResponse("THIS IS MY ngos PAGE(/)")
     return render(request, 'ngos.html')
-def contact (request):
+def contact_form (request):
    if request.method=="POST":
        firstname = request.POST['firstname']
        lastname = request.POST['lastname']
        subject = request.POST['subject']
-       inputcity = request.POST['inputcity']
+       inputCity = request.POST['inputCity']
        state=request.POST['state']
        #print(firstname, lastname, subject, inputcity,state )
-       ins=contact(firstname= firstname,lastname=lastname,subject=subject,inputcity=inputcity,state=state)
-       ins.save()
+       contact_instance=contact(firstname= firstname,lastname=lastname,subject=subject,inputcity=inputCity,state=state)
+       contact_instance.save()
        print("the data has been written to the database")
    # return HttpResponse("THIS IS MY contact PAGE(/)")
    return render(request, 'contact.html')
