@@ -2,7 +2,7 @@
 
 :root{
     --themeRed:#e43a47;
-    --gray: #efefef;
+   --gray: #efefef; 
 }
 
 
@@ -219,7 +219,7 @@ header nav ul li a:hover{
     text-align: center;
     padding-bottom: 25px;
     border-radius: 5px;
-    box-shadow: 0 0 3px 0 #c5c5c5;
+    box-shadow: 0 0 3px 0 #070707;
     position: relative;
     margin-bottom: 15px;
 }
@@ -257,7 +257,7 @@ header nav ul li a:hover{
 }
 .container .boxcontainer .box:nth-child(3) .cardImage,
 .container .boxcontainer .box:nth-child(3) .cardImage:after{
-    background-image: url("");
+    background-image: url("image6.jpg");
 
 }
 .container .boxcontainer .box:nth-child(4) .cardImage,
@@ -278,7 +278,7 @@ header nav ul li a:hover{
 .container .boxcontainer .box .donationCount{
     font-size: 13px;
     font-weight: 600;
-    color: #444;
+    color: #000000;
     margin-top: 10px;
 }
 
