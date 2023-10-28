@@ -1,5 +1,6 @@
 from django.db import models
-
+import os
+import datetime
 # Create your models here.
 
 # create model for contacts
@@ -21,3 +22,14 @@ class Report(models.Model):
     location = models.CharField(max_length=100)
     ngo = models.ForeignKey(NGO, on_delete=models.CASCADE)
     # Add more fields as needed
+
+def filepath(request,filename):
+    old_filename=filename
+    timeNow= datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    filename="%s%s" % ( timeNow ,old_filename)
+    return os.path.join('static/', filename)
+
+class Item(models.Model):
+    email = models.CharField(max_length=100)
+    textarea = models.TextField(max_length=5000, null=True)
+    image = models.ImageField(upload_to=filepath, null=True,blank=True)

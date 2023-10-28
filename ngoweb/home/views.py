@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from home.models import contact
+from home.models import Item
 
 # Create your views here from here you display the http respons tto the site.
 def home (request):
@@ -40,23 +41,9 @@ def report_list(request):
     return render(request, 'report_list.html', {'reports': reports})
 
 
-
-
-
-
-
-
-
-
-
-
-
 def ngos (request):
    # return HttpResponse("THIS IS MY ngos PAGE(/)")
     return render(request, 'ngos.html')
-
-
-
 
 def contact_form (request):
    if request.method=="POST":
@@ -74,3 +61,14 @@ def contact_form (request):
 
 
 
+def addProduct(request):
+   if request.method == "POST":
+      prod=Item()
+      prod.email= request.POST.get('emailaddress')
+      prod.textarea= request.POST.get('description2')
+      if len(request.FILES) !=0:
+       prod.image= request.FILES['image']
+
+      prod.save()
+      return HttpResponse(request, "product added succesfullly")
+   return render(request,'report.html')

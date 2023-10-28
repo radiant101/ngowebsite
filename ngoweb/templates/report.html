@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Submit Report</title>
-</head>
-<body>
-    <h1>Submit a Report</h1>
-    
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <label for="id_report_type">Report Type:</label>
-        <select name="report_type" id="id_report_type">
-            <option value="text_report">Text Report</option>
-            <option value="image_report">Image Report</option>
-        </select>
-        
-        {{ text_form.text.label_tag }} {{ text_form.text }}
-        {{ text_form.location.label_tag }} {{ text_form.location }}
-        {{ text_form.ngo.label_tag }} {{ text_form.ngo }}
-
-        {{ image_form.image.label_tag }} {{ image_form.image }}
-        {{ image_form.location.label_tag }} {{ image_form.location }}
-        {{ image_form.ngo.label_tag }} {{ image_form.ngo }}
-
-        <button type="submit">Submit Report</button>
-    </form>
-</body>
-</html>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="emailaddress">Email address</label>
+        <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="name@example.com">
+    </div>
+  
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+    </div>
+  
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" name="image" required class="form-control">
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
