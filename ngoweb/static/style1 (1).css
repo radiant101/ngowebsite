@@ -1,0 +1,60 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(DOGSHELTER.JPG);
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    background-color: #8EC5FC;
+    box-shadow: 0 0 20px 0 #737373;
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    margin: 35px;
+}
+
+.input-field,
+.textarea-field {
+    width: 400px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #eedb8d;
+    border-radius: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textarea-field {
+    height: 150px;
+}
+
+.btn {
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 18px;
+    padding: 10px 20px;
+    background-color: #21e842;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1cc02c;
+}
+

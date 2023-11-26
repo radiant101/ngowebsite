@@ -3,49 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contacts</title>
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap">
+    <link rel="stylesheet" href="static/contact.css"> <!-- Replace with the actual path to your CSS file -->
 </head>
 <body>
-    this is contact
+    <div class="wrapper">
+        <div class="title">Contact Us</div>
+        <form action="contact" method="post" class="form">
+            {% csrf_token %}
+            <div class="input_field">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname">
+            </div>
+            <div class="input_field">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname">
+            </div>
+            <div class="input_field">
+                <label for="subject">Ask a question ?</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            <div class="input_field">
+                <label for="inputCity">City:</label>
+                <input type="text" id="inputCity" name="inputCity">
+            </div>
+            <div class="input_field">
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option selected>Choose...</option>
+                    <option>Maharashtra</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Rajasthan</option>
+                </select>
+            </div>
+            <div class="input_field">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
-<!-- i have added name ,id,for same -->
-<div class="container">
-  <h2 class="text-center my-3">Contact Us</h2>
-  <form action="contact" method="post">
-      {% csrf_token %}
-      <div class="row g-3">
-          <div class="col-md-6">
-              <label for="firstname" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="firstname" name="firstname">
-          </div>
-          <div class="col-md-6">
-              <label for="lastname" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="lastname" name="lastname">
-          </div>
-          <div class="col-12">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="subject" name="subject">
-          </div>
-          <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity" name="inputCity">
-          </div>
-          <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select id="state" name="state" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>Maharashtra</option>
-                  <option>Madhya Pradesh</option>
-                  <option>Rajasthan</option>
-              </select>
-          </div>
-          <div class="col-12">
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-      </div>
-  </form>
-</div>
-
-
-    <!-- i have added name ,id,for same -->

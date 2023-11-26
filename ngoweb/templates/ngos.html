@@ -1,11 +1,28 @@
+<!-- paypal_payment.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ngos</title>
+    <title>Pay with PayPal</title>
 </head>
 <body>
-    this is ngos
+
+    <div class="cards">
+        <div class="payment-box">
+            <div class="title">Pay with PayPal</div>
+            <p>Click the button to make a payment.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your-paypal-email@example.com"> <!-- Replace with your PayPal email -->
+                <input type="hidden" name="item_name" value="Payment for Something">
+                <input type="hidden" name="amount" value="10.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online">
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
