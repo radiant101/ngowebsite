@@ -61,7 +61,7 @@ from django.core.mail import send_mail
 from home.models import contact
 
 def home(request):
-    if request.method == "GET":
+    if request.method =="GET":
         return render(request, 'home.html')
     return HttpResponse("Invalid Request")
 
@@ -83,7 +83,7 @@ def send_notification_email(ngo_email, image_path=None):
     print(f"Email sent successfully to {ngo_email}")
 
 def notify_nearby_ngos(user_location, user_address, ngos):
-    user_lat, user_lon = user_location
+    user_lat,user_lon= user_location
     user_coord = (user_lat, user_lon)
 
     nearby_ngos = []
@@ -117,27 +117,27 @@ def addProduct(request):
         else:
             print(f"Geocoding failed for address: {prod.address}. No location found.")
 
-        # Check if 'image' is in request.FILES
+        #Check if 'image' is in request.FILES
         if 'image' in request.FILES:
             prod.image = request.FILES['image']
 
-        # Save the product without exception handling
+        #Save the product without exception handling
         prod.save()
 
         # Notify nearby NGOs
-        user_location = (prod.latitude, prod.longitude)
+        user_location = (prod.latitude,prod.longitude)
         user_address = prod.address
         ngos = NGO.objects.all()
-        nearby_ngos = notify_nearby_ngos(user_location, user_address, ngos)
+        nearby_ngos = notify_nearby_ngos(user_location,user_address, ngos)
 
         for ngo in nearby_ngos:
-            send_notification_email(ngo.email, prod)
+            send_notification_email(ngo.email,prod)
 
         print('Product added successfully')
 
-        # Return success response
-        return HttpResponse("Product added successfully")
+    
+        return HttpResponse("Report successfully")
 
-    # If the request method is not POST, render the 'add.html' template
+    
     return render(request, 'add.html')
 

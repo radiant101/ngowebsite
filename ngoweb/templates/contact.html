@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,35 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap">
     <link rel="stylesheet" href="static/contact.css"> <!-- Replace with the actual path to your CSS file -->
 </head>
+
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+        <img src="static/logo.jpg" alt="NGO logo">
+
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About us</a>
+                    </li>
+                    <li>
+                        <a href="/add">Report</a>
+                    </li>
+                    <li>
+                        <a href="/volunteer">Volunteer</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="wrapper">
         <div class="title">Contact Us</div>
         <form action="contact" method="post" class="form">
@@ -21,7 +50,7 @@
                 <input type="text" id="lastname" name="lastname">
             </div>
             <div class="input_field">
-                <label for="subject">Ask a question ?</label>
+                <label for="subject">Ask a question?</label>
                 <input type="text" id="subject" name="subject">
             </div>
             <div class="input_field">
@@ -43,4 +72,5 @@
         </form>
     </div>
 </body>
+
 </html>

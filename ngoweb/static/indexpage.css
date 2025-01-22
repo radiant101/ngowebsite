@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapos.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap');
 
 :root{
-    --themeRed:#e43a47;
+    --themeRed:#000000;
    --gray: #efefef; 
 }
 
@@ -95,6 +95,7 @@ header nav ul li a{
     text-transform: capitalize;
     font-size: 16px;
     color: #dddbdb;
+    font-weight: bold;
     transition: 0.3s;
 
 }
@@ -134,20 +135,26 @@ header nav ul li a:hover{
     margin-top: 10px;
 }
 .banner button{
-    background-color: var(--themeRed);
-    border: 0;
-    outline: none;
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  transition: 0.3s;
+}
+
+.banner button :hover{
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
     color: #fff;
-    padding: 10px 15px;
-    margin-top: 20px;
-    font-size: 13px;
-    border-radius: 3px;
-    font-weight: 600;
+
 }
 /* home page style ends */
 
 #aboutSection .cards
-{ display:flex;
+{   display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 50px;

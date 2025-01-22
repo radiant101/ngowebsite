@@ -38,7 +38,7 @@ class Item(models.Model):
 
     def save(self, *args, **kwargs):
         if self.address:
-            # Use Nominatim for geocoding
+            
             geolocator = Nominatim(user_agent="YourAppName/1.0")
             location = geolocator.geocode(self.address)
 
